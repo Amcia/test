@@ -1,5 +1,4 @@
 import csv
-import matplotlib.pyplot as plt
 
 def remove_reapeted(file):
     with open(file, 'r') as f:
