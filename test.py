@@ -2,9 +2,9 @@ from subprocess import call
 import time
 
 
-print(time.asctime(time.localtime(time.time())))
+localtime = time.asctime(time.localtime(time.time()))
 with open("mtr.log", 'w') as f:
-    for i in range (2):
+    while '19:05:' not in localtime:
         call(["mtr", "-n", "-r", "-c10", "--csv", "-z", "8.8.8.8"], stdout=f)
         print("completed")
-        print(time.asctime(time.localtime(time.time())))
+        localtime = time.asctime(time.localtime(time.time()))
